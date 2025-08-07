@@ -1,402 +1,173 @@
-/**
- * CivicAI Chat Widget - Versão Final
- * 
- * Este script cria um widget de chat para o CivicAI que pode ser incorporado
- * em qualquer site, incluindo o CivicSphere.
- * 
- * Configurado para se conectar ao API Gateway público.
- */
 
-(function() {
-  // Configuração
-  const API_URL = 'https://8000-in22o8k6s4u0a5huiv0gt-42c7b9ae.manusvm.computer'; // URL público do API Gateway
-  
-  // Estilos CSS
-  const styles = `
-    .civicai-chat-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 350px;
-      height: 500px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      transition: height 0.3s ease;
-      z-index: 1000;
-      border: 1px solid #e0e0e0;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estação das Flores - Poemas para Despertar</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
-    .civicai-chat-container.closed {
-      height: 60px;
-    }
-    
-    .civicai-chat-header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-    
-    .civicai-chat-title {
-      font-weight: bold;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-    }
-    
-    .civicai-chat-avatar {
-      width: 30px;
-      height: 30px;
-      background-color: #3498db;
-      border-radius: 50%;
-      margin-right: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      color: white;
-    }
-    
-    .civicai-chat-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      padding: 0;
-    }
-    
-    .civicai-messages-container {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
+    body {
+      background: linear-gradient(135deg, #f7d9e3, #a9def9);
+      color: #222;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-    
-    .civicai-message-bubble {
-      max-width: 80%;
-      padding: 10px 15px;
-      border-radius: 18px;
-      word-wrap: break-word;
-    }
-    
-    .civicai-message-bubble.user {
-      background-color: #3498db;
-      color: white;
-      align-self: flex-end;
-      margin-left: auto;
-    }
-    
-    .civicai-message-bubble.bot {
-      background-color: #f0f0f0;
-      color: #333;
-      align-self: flex-start;
-      margin-right: auto;
-    }
-    
-    .civicai-input-container {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid #e0e0e0;
-    }
-    
-    .civicai-message-input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #e0e0e0;
-      border-radius: 20px;
-      outline: none;
-      font-size: 14px;
-    }
-    
-    .civicai-message-input:focus {
-      border-color: #3498db;
-    }
-    
-    .civicai-send-button {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      margin-left: 10px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
       align-items: center;
+      padding: 2rem 1rem;
     }
-    
-    .civicai-send-button:hover {
-      background-color: #2980b9;
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    
-    .civicai-suggestions-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-      padding: 0 10px;
+    header h1 {
+      font-size: 2.8rem;
+      color: #b23a48;
+      margin-bottom: 0.5rem;
     }
-    
-    .civicai-suggestion-button {
-      background-color: #f8f9fa;
-      border: 1px solid #e0e0e0;
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #4a4a4a;
+    }
+    .cover {
+      width: 280px;
+      max-width: 90vw;
       border-radius: 15px;
-      padding: 6px 12px;
-      font-size: 12px;
+      box-shadow: 0 8px 20px rgba(178, 58, 72, 0.5);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .cover:hover {
+      transform: scale(1.05);
+    }
+    .description {
+      max-width: 450px;
+      background: rgba(255 255 255 / 0.8);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #3a3a3a;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .buttons a {
+      background-color: #b23a48;
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      box-shadow: 0 5px 10px rgba(178, 58, 72, 0.6);
+      transition: background-color 0.3s ease;
+    }
+    .buttons a:hover {
+      background-color: #8c2a37;
+    }
+    form {
+      background: #ffffffcc;
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
+      max-width: 380px;
+      width: 90vw;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    form h2 {
+      color: #b23a48;
+      margin-bottom: 1rem;
+    }
+    form input[type="email"] {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #b23a48;
+      border-radius: 40px;
+      outline: none;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    form input[type="email"]:focus {
+      border-color: #8c2a37;
+    }
+    form button {
+      background-color: #b23a48;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
       cursor: pointer;
-      white-space: nowrap;
+      transition: background-color 0.3s ease;
     }
-    
-    .civicai-suggestion-button:hover {
-      background-color: #e9ecef;
+    form button:hover {
+      background-color: #8c2a37;
     }
-    
-    .civicai-hidden {
-      display: none;
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      max-width: 500px;
     }
-  `;
-  
-  // Cria o elemento de estilo
-  const styleElement = document.createElement('style');
-  styleElement.textContent = styles;
-  document.head.appendChild(styleElement);
-  
-  // Cria a estrutura HTML do chat
-  function createChatWidget() {
-    const chatContainer = document.createElement('div');
-    chatContainer.className = 'civicai-chat-container';
-    
-    // Header
-    const chatHeader = document.createElement('div');
-    chatHeader.className = 'civicai-chat-header';
-    
-    const chatTitle = document.createElement('div');
-    chatTitle.className = 'civicai-chat-title';
-    
-    const chatAvatar = document.createElement('div');
-    chatAvatar.className = 'civicai-chat-avatar';
-    chatAvatar.textContent = 'C';
-    
-    const titleText = document.createTextNode('CivicAI');
-    
-    chatTitle.appendChild(chatAvatar);
-    chatTitle.appendChild(titleText);
-    
-    const chatToggle = document.createElement('button');
-    chatToggle.className = 'civicai-chat-toggle';
-    chatToggle.textContent = '▼';
-    
-    chatHeader.appendChild(chatTitle);
-    chatHeader.appendChild(chatToggle);
-    
-    // Messages container
-    const messagesContainer = document.createElement('div');
-    messagesContainer.className = 'civicai-messages-container';
-    
-    // Suggestions
-    const suggestionsContainer = document.createElement('div');
-    suggestionsContainer.className = 'civicai-suggestions-container';
-    
-    const suggestions = [
-      "O que é CivicSphere?",
-      "O que é política?",
-      "Como participar?",
-      "É seguro?"
-    ];
-    
-    suggestions.forEach(suggestion => {
-      const suggestionButton = document.createElement('button');
-      suggestionButton.className = 'civicai-suggestion-button';
-      suggestionButton.textContent = suggestion;
-      suggestionButton.addEventListener('click', () => {
-        document.querySelector('.civicai-message-input').value = suggestion;
-      });
-      suggestionsContainer.appendChild(suggestionButton);
-    });
-    
-    // Input container
-    const inputContainer = document.createElement('div');
-    inputContainer.className = 'civicai-input-container';
-    
-    const messageInput = document.createElement('input');
-    messageInput.className = 'civicai-message-input';
-    messageInput.type = 'text';
-    messageInput.placeholder = 'Digite sua mensagem...';
-    
-    const sendButton = document.createElement('button');
-    sendButton.className = 'civicai-send-button';
-    sendButton.textContent = '➤';
-    
-    inputContainer.appendChild(messageInput);
-    inputContainer.appendChild(sendButton);
-    
-    // Montar o widget
-    chatContainer.appendChild(chatHeader);
-    chatContainer.appendChild(messagesContainer);
-    chatContainer.appendChild(suggestionsContainer);
-    chatContainer.appendChild(inputContainer);
-    
-    document.body.appendChild(chatContainer);
-    
-    return {
-      container: chatContainer,
-      header: chatHeader,
-      toggle: chatToggle,
-      messagesContainer,
-      messageInput,
-      sendButton,
-      suggestionsContainer
-    };
-  }
-  
-  // Inicializa o chat
-  function initChat() {
-    const chat = createChatWidget();
-    let isOpen = true;
-    let messageId = 1;
-    let isLoading = false;
-    
-    // Adiciona a mensagem inicial de boas-vindas
-    addMessage("Olá! Sou o CivicAI, assistente virtual do CivicSphere. Como posso ajudar você hoje?", 'bot');
-    
-    // Função para adicionar mensagem
-    function addMessage(text, sender) {
-      const messageElement = document.createElement('div');
-      messageElement.className = `civicai-message-bubble ${sender}`;
-      messageElement.textContent = text;
-      
-      chat.messagesContainer.appendChild(messageElement);
-      messageId++;
-      
-      // Rola para a mensagem mais recente
-      messageElement.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    // Função para enviar mensagem
-    async function sendMessage() {
-      const text = chat.messageInput.value.trim();
-      if (!text || isLoading) return;
-      
-      // Adiciona mensagem do usuário
-      addMessage(text, 'user');
-      chat.messageInput.value = '';
-      isLoading = true;
-      
-      try {
-        // Determina qual pergunta_id usar com base no conteúdo da mensagem
-        let perguntaId = '';
-        
-        // Lógica simples para mapear perguntas para IDs
-        const lowerCaseInput = text.toLowerCase();
-        if (lowerCaseInput.includes('o que é civicsphere') || lowerCaseInput.includes('o que e civicsphere')) {
-          perguntaId = 'o_que_e_civicsphere';
-        } else if (lowerCaseInput.includes('o que é política') || lowerCaseInput.includes('o que e politica')) {
-          perguntaId = 'o_que_e_politica';
-        } else if (lowerCaseInput.includes('participar') || lowerCaseInput.includes('como')) {
-          perguntaId = 'como_participar';
-        } else if (lowerCaseInput.includes('seguro')) {
-          perguntaId = 'e_seguro';
-        } else if (lowerCaseInput.includes('consciência política') || lowerCaseInput.includes('consciencia politica')) {
-          perguntaId = 'consciencia_politica';
-        } else if (lowerCaseInput.includes('tática') || lowerCaseInput.includes('estratégia') || lowerCaseInput.includes('tatica') || lowerCaseInput.includes('estrategia')) {
-          perguntaId = 'tatica_vs_estrategia';
-        } else if (lowerCaseInput.includes('autocuidado') || lowerCaseInput.includes('cuidado')) {
-          perguntaId = 'autocuidado_politico';
-        } else if (lowerCaseInput.includes('memória coletiva') || lowerCaseInput.includes('memoria coletiva')) {
-          perguntaId = 'memoria_coletiva';
-        } else if (lowerCaseInput.includes('grupos locais') || lowerCaseInput.includes('grupo local')) {
-          perguntaId = 'grupos_locais';
-        } else if (lowerCaseInput.includes('tecnologia') || lowerCaseInput.includes('mobilização') || lowerCaseInput.includes('mobilizacao')) {
-          perguntaId = 'tecnologia_mobilizacao';
-        } else {
-          // Resposta padrão para perguntas não mapeadas
-          const botResponse = "Desculpe, ainda não tenho uma resposta para essa pergunta específica. Estou em constante aprendizado! Você pode perguntar sobre o CivicSphere, política, consciência política, táticas e estratégias, autocuidado político, memória coletiva, grupos locais ou tecnologia e mobilização.";
-          
-          setTimeout(() => {
-            addMessage(botResponse, 'bot');
-            isLoading = false;
-          }, 1000);
-          
-          return;
-        }
-        
-        // Adiciona indicador de digitação
-        const typingIndicator = document.createElement('div');
-        typingIndicator.className = 'civicai-message-bubble bot';
-        typingIndicator.textContent = 'Digitando...';
-        typingIndicator.id = 'typing-indicator';
-        chat.messagesContainer.appendChild(typingIndicator);
-        
-        // Chamada à API
-        const response = await fetch(`${API_URL}/assistente/faq?pergunta_id=${perguntaId}`);
-        const data = await response.json();
-        
-        // Remove o indicador de digitação
-        const indicator = document.getElementById('typing-indicator');
-        if (indicator) indicator.remove();
-        
-        // Adiciona resposta do bot
-        setTimeout(() => {
-          addMessage(data.resposta, 'bot');
-          isLoading = false;
-        }, 500);
-        
-      } catch (error) {
-        console.error('Erro ao enviar mensagem:', error);
-        
-        // Remove o indicador de digitação
-        const indicator = document.getElementById('typing-indicator');
-        if (indicator) indicator.remove();
-        
-        // Mensagem de erro
-        setTimeout(() => {
-          addMessage("Desculpe, estou com dificuldades para processar sua solicitação no momento. Por favor, tente novamente mais tarde.", 'bot');
-          isLoading = false;
-        }, 500);
-      }
-    }
-    
-    // Event listeners
-    chat.header.addEventListener('click', () => {
-      isOpen = !isOpen;
-      if (isOpen) {
-        chat.container.classList.remove('closed');
-        chat.toggle.textContent = '▼';
-      } else {
-        chat.container.classList.add('closed');
-        chat.toggle.textContent = '▲';
-      }
-    });
-    
-    chat.sendButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      sendMessage();
-    });
-    
-    chat.messageInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        sendMessage();
-      }
-    });
-  }
-  
-  // Inicializa o chat quando o DOM estiver pronto
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initChat);
-  } else {
-    initChat();
-  }
-})();
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Estação das Flores</h1>
+    <p>Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
+  </header>
+
+  <img 
+    class="cover" 
+    src="https://i.imgur.com/9aYt3Mf.png" 
+    alt="Capa do Livro Estação das Flores 3D"
+    loading="lazy"
+  />
+
+  <section class="description">
+    Este livro é um convite à liberdade, à beleza e ao despertar coletivo.<br />
+    Leia, compartilhe e viva a poesia da transformação!
+  </section>
+
+  <div class="buttons">
+    <a href="mailto:enio.brito@gmail.com" target="_blank" rel="noopener">📩 Fale comigo por e-mail</a>
+    <a href="https://wa.me/556292482405324" target="_blank" rel="noopener">💬 Fale comigo no WhatsApp</a>
+  </div>
+
+  <form 
+    action="https://formspree.io/f/yourformid" 
+    method="POST"
+    >
+    <h2>Receba conteúdos e novidades no seu e-mail</h2>
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Digite seu melhor e-mail" 
+      required 
+      autocomplete="email" 
+    />
+    <button type="submit">Quero receber!</button>
+  </form>
+
+  <footer>
+    &copy; 2025 Enio Brito de Sá — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
