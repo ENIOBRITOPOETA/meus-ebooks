@@ -1,128 +1,172 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Estação das Flores - Poemas para Despertar</title>
+  <title>Estação das Flores – Poemas para Despertar</title>
   <style>
-    /* Reset básico */
+    /* Reset e base */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background: linear-gradient(135deg, #f7d9e3, #a9def9);
-      color: #222;
+      background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+      color: #333;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem 1rem;
+      text-align: center;
+      transition: background-color 0.5s ease;
     }
     header {
-      text-align: center;
+      max-width: 480px;
       margin-bottom: 2rem;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #b23a48;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
+      user-select: none;
     }
-    header p {
-      font-size: 1.2rem;
+    header p.subtitle {
+      font-size: 1.25rem;
       font-style: italic;
-      color: #4a4a4a;
+      color: #6a4a58;
+      margin-bottom: 1.5rem;
+      user-select: none;
     }
-    .cover {
-      width: 280px;
-      max-width: 90vw;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(178, 58, 72, 0.5);
-      margin-bottom: 2rem;
+    img.capa {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(178, 58, 72, 0.4);
+      margin-bottom: 1.8rem;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .cover:hover {
+    img.capa:hover {
       transform: scale(1.05);
     }
-    .description {
-      max-width: 450px;
-      background: rgba(255 255 255 / 0.8);
-      border-radius: 12px;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
+    p.apresentacao {
+      max-width: 420px;
+      margin: 0 auto 2rem;
       font-size: 1.1rem;
-      color: #3a3a3a;
-      text-align: center;
       line-height: 1.5;
+      color: #4a3c47;
+      background: rgba(255 255 255 / 0.85);
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      user-select: none;
     }
-    .buttons {
+    .botoes-contato {
       display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
     }
-    .buttons a {
+    .btn {
       background-color: #b23a48;
       color: white;
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
+      padding: 1em 2.2em;
       border-radius: 40px;
-      font-weight: 600;
-      box-shadow: 0 5px 10px rgba(178, 58, 72, 0.6);
-      transition: background-color 0.3s ease;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
     }
-    .buttons a:hover {
+    .btn:hover, .btn:focus {
       background-color: #8c2a37;
+      transform: scale(1.05);
+      outline: none;
     }
+
     form {
-      background: #ffffffcc;
-      padding: 1.5rem 2rem;
-      border-radius: 15px;
-      max-width: 380px;
-      width: 90vw;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      text-align: center;
+      background: white;
+      max-width: 420px;
+      width: 100%;
+      padding: 1.8rem 2.2rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(178, 58, 72, 0.2);
+      text-align: left;
+      margin-bottom: 2rem;
+      user-select: none;
     }
     form h2 {
       color: #b23a48;
+      font-size: 1.7rem;
       margin-bottom: 1rem;
+      text-align: center;
+      user-select: text;
     }
-    form input[type="email"] {
+    label {
+      display: block;
+      font-weight: 600;
+      color: #6a4a58;
+      margin-bottom: 0.5rem;
+      user-select: text;
+    }
+    input[type="email"] {
       width: 100%;
-      padding: 0.7rem 1rem;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
       border: 2px solid #b23a48;
       border-radius: 40px;
-      outline: none;
-      margin-bottom: 1rem;
+      outline-offset: 3px;
       transition: border-color 0.3s ease;
     }
-    form input[type="email"]:focus {
+    input[type="email"]:focus {
       border-color: #8c2a37;
+      outline: none;
     }
-    form button {
+    button[type="submit"] {
+      width: 100%;
+      padding: 0.9rem 1rem;
       background-color: #b23a48;
-      border: none;
       color: white;
-      font-weight: 700;
-      padding: 0.8rem 2rem;
+      border: none;
       border-radius: 40px;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 1.2rem;
+      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
     }
-    form button:hover {
+    button[type="submit"]:hover, button[type="submit"]:focus {
       background-color: #8c2a37;
+      transform: scale(1.05);
+      outline: none;
     }
+
     footer {
-      margin-top: 3rem;
       font-size: 0.9rem;
-      color: #666;
-      text-align: center;
-      max-width: 500px;
+      color: #8c7b83;
+      margin-top: auto;
+      padding-bottom: 1rem;
+      user-select: none;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 480px) {
+      .botoes-contato {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .btn {
+        width: 100%;
+        padding: 1em 0;
+      }
+      form {
+        padding: 1.5rem 1.5rem;
+      }
     }
   </style>
 </head>
@@ -130,37 +174,39 @@
 
   <header>
     <h1>📚 Estação das Flores</h1>
-    <p>Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
+    <p class="subtitle">Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
+
+    <img
+      class="capa"
+      src="https://eniobritopoeta.github.io/meus-ebooks/livro3d.png"
+      alt="Capa do Livro Estação das Flores 3D"
+      title="Capa do Livro Estação das Flores"
+      loading="lazy"
+    />
+
+    <p class="apresentacao">
+      Este livro é um convite à liberdade, à beleza e ao despertar coletivo.<br />
+      Leia, compartilhe e viva a poesia da transformação!
+    </p>
+
+    <div class="botoes-contato">
+      <a href="mailto:enio.brito@gmail.com" class="btn" aria-label="Fale comigo por e-mail">📩 Fale comigo por e-mail</a>
+      <a href="https://wa.me/5562982405324" class="btn" target="_blank" rel="noopener" aria-label="Fale comigo no WhatsApp">💬 Fale comigo no WhatsApp</a>
+    </div>
   </header>
 
-  <img 
-    class="cover" 
-    src="https://i.imgur.com/9aYt3Mf.png" 
-    alt="Capa do Livro Estação das Flores 3D"
-    loading="lazy"
-  />
-
-  <section class="description">
-    Este livro é um convite à liberdade, à beleza e ao despertar coletivo.<br />
-    Leia, compartilhe e viva a poesia da transformação!
-  </section>
-
-  <div class="buttons">
-    <a href="mailto:enio.brito@gmail.com" target="_blank" rel="noopener">📩 Fale comigo por e-mail</a>
-    <a href="https://wa.me/556292482405324" target="_blank" rel="noopener">💬 Fale comigo no WhatsApp</a>
-  </div>
-
-  <form 
-    action="https://formspree.io/f/yourformid" 
-    method="POST"
-    >
+  <form action="https://formspree.io/f/xpwlozpz" method="POST" novalidate>
     <h2>Receba conteúdos e novidades no seu e-mail</h2>
-    <input 
-      type="email" 
-      name="email" 
-      placeholder="Digite seu melhor e-mail" 
-      required 
-      autocomplete="email" 
+    <label for="email">Seu melhor e-mail:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Digite seu melhor e-mail"
+      required
+      autocomplete="email"
+      aria-required="true"
+      aria-describedby="emailHelp"
     />
     <button type="submit">Quero receber!</button>
   </form>
@@ -171,3 +217,5 @@
 
 </body>
 </html>
+
+
