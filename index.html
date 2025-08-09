@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -44,9 +45,6 @@
       box-shadow: 0 8px 20px rgba(178, 58, 72, 0.4);
       margin-bottom: 1.8rem;
       cursor: pointer;
-    }
-    img.capa:hover {
-      transform: scale(1.05);
     }
     .apresentacao {
       max-width: 420px;
@@ -112,7 +110,6 @@
       border: 2px solid #b23a48;
       border-radius: 40px;
       outline: none;
-      transition: border-color 0.3s ease;
     }
     form input[type="email"]:focus {
       border-color: #8c2a37;
@@ -189,11 +186,9 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>📚 Estação das Flores</h1>
     <p class="subtitle">Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
-
     <img
       class="capa"
       src="https://eniobritopoeta.github.io/meus-ebooks/livro3d.png"
@@ -201,12 +196,10 @@
       title="Capa do Livro Estação das Flores"
       loading="lazy"
     />
-
     <p class="apresentacao">
       Este livro é um convite à liberdade, à beleza e ao despertar coletivo.<br>
       Leia, compartilhe e viva a poesia da transformação!
     </p>
-
     <div class="botoes-contato">
       <a href="mailto:enio.brito@gmail.com" class="btn">📩 Fale comigo por e-mail</a>
       <a href="https://wa.me/5562982405324" class="btn" target="_blank" rel="noopener">💬 Fale comigo no WhatsApp</a>
@@ -215,9 +208,7 @@
 
   <div class="conteudo">
     <p>Bem-vindo(a)! Aqui você encontrará poesia viva, espiritualidade transformadora e consciência política libertadora.</p>
-
-    <!-- Formulário Buttondown -->
-    <form action="https://buttondown.com/api/emails/embed-subscribe/enio" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/enio', 'popupwindow')" class="embeddable-buttondown-form">
+    <form action="https://buttondown.com/api/emails/embed-subscribe/enio" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/enio', 'popupwindow')">
       <label for="bd-email">Seu e-mail</label>
       <input type="email" name="email" id="bd-email" required />
       <input type="submit" value="Receber livro grátis" />
@@ -227,13 +218,14 @@
   <section class="livros">
     <h2>Outros Livros</h2>
     <div class="galeria-livros">
-      <!-- Adicione mais capas aqui quando tiver -->
+      <img class="capa-livro" src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Estação das Flores">
+      <img class="capa-livro" src="https://eniobritopoeta.github.io/meus-ebooks/formacao-politica.png" alt="Formação Política">
+      <img class="capa-livro" src="https://eniobritopoeta.github.io/meus-ebooks/meninos-do-futuro.png" alt="Meninos do Futuro">
     </div>
   </section>
 
   <footer>
     © 2025 Enio Brito. Todos os direitos reservados.
   </footer>
-
 </body>
 </html>
