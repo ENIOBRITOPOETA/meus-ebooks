@@ -1,105 +1,156 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Estação das Flores - Poemas para Despertar</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
-      background-color: #fff8f5;
+      background: linear-gradient(135deg, #fce4ec, #f3e5f5);
       color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
       line-height: 1.6;
-      padding: 1rem;
     }
-
     header {
+      max-width: 480px;
+      margin-bottom: 2rem;
       text-align: center;
       padding: 2rem 1rem;
       background-color: #b23a48;
       color: white;
+      border-radius: 12px;
     }
-
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.3rem;
     }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
+    header p.subtitle {
+      font-size: 1.25rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
     }
-
+    img.capa {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(178, 58, 72, 0.4);
+      margin-bottom: 1.8rem;
+      cursor: pointer;
+    }
+    img.capa:hover {
+      transform: scale(1.05);
+    }
+    .apresentacao {
+      max-width: 420px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #4a3c47;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .botoes-contato {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background-color: #b23a48;
+      color: white;
+      padding: 1em 2.2em;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #8c2a37;
+      transform: scale(1.05);
+    }
     .conteudo {
       max-width: 720px;
       margin: 2rem auto;
       text-align: center;
     }
-
     .conteudo p {
-      margin-bottom: 1rem;
       font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
-
     form {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-top: 2rem;
-    }
-
-    form input,
-    form button {
-      padding: 0.8rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      margin-bottom: 1rem;
+      max-width: 420px;
       width: 100%;
+      margin: 2rem auto;
+      padding: 1.8rem 2.2rem;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(178, 58, 72, 0.2);
     }
-
-    form button {
+    form label {
+      display: block;
+      font-weight: 600;
+      color: #6a4a58;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+    form input[type="email"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #b23a48;
+      border-radius: 40px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    form input[type="email"]:focus {
+      border-color: #8c2a37;
+    }
+    form input[type="submit"] {
+      width: 100%;
+      padding: 0.9rem;
       background-color: #b23a48;
       color: white;
       border: none;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
-    form button:hover {
-      background-color: #991f33;
+    form input[type="submit"]:hover {
+      background-color: #8c2a37;
+      transform: scale(1.05);
     }
-
-    /* Galeria de livros */
     section.livros {
       max-width: 800px;
-      width: 100%;
       margin: 3rem auto;
       text-align: center;
     }
-
     section.livros h2 {
       font-size: 2rem;
       color: #b23a48;
       margin-bottom: 1.5rem;
     }
-
     .galeria-livros {
       display: flex;
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
     }
-
     .galeria-livros img.capa-livro {
       width: 160px;
       border-radius: 14px;
@@ -107,12 +158,10 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .galeria-livros img.capa-livro:hover {
       transform: scale(1.1) rotateZ(1deg);
       box-shadow: 0 8px 24px rgba(178, 58, 72, 0.6);
     }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -120,19 +169,21 @@
       background-color: #fce4e4;
       color: #333;
       font-size: 0.9rem;
+      width: 100%;
     }
-
     @media (max-width: 480px) {
-      .galeria-livros {
+      .botoes-contato {
+        flex-direction: column;
         gap: 1rem;
       }
-
+      .btn {
+        width: 100%;
+      }
+      img.capa {
+        width: 280px;
+      }
       .galeria-livros img.capa-livro {
         width: 120px;
-      }
-
-      form {
-        padding: 1.5rem;
       }
     }
   </style>
@@ -140,31 +191,48 @@
 <body>
 
   <header>
-    <h1>Estação das Flores</h1>
-    <p>Poemas para despertar – uma revolução de amor em palavras</p>
+    <h1>📚 Estação das Flores</h1>
+    <p class="subtitle">Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
+
+    <img
+      class="capa"
+      src="https://eniobritopoeta.github.io/meus-ebooks/livro3d.png"
+      alt="Capa do Livro Estação das Flores 3D"
+      title="Capa do Livro Estação das Flores"
+      loading="lazy"
+    />
+
+    <p class="apresentacao">
+      Este livro é um convite à liberdade, à beleza e ao despertar coletivo.<br>
+      Leia, compartilhe e viva a poesia da transformação!
+    </p>
+
+    <div class="botoes-contato">
+      <a href="mailto:enio.brito@gmail.com" class="btn">📩 Fale comigo por e-mail</a>
+      <a href="https://wa.me/5562982405324" class="btn" target="_blank" rel="noopener">💬 Fale comigo no WhatsApp</a>
+    </div>
   </header>
 
   <div class="conteudo">
     <p>Bem-vindo(a)! Aqui você encontrará poesia viva, espiritualidade transformadora e consciência política libertadora.</p>
 
-    <form action="#" method="POST">
-      <h2>Receba conteúdos e novidades no seu e-mail</h2>
-      <input type="email" name="email" placeholder="Digite seu e-mail" required />
-      <button type="submit">Quero receber!</button>
+    <!-- Formulário Buttondown -->
+    <form action="https://buttondown.com/api/emails/embed-subscribe/enio" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/enio', 'popupwindow')" class="embeddable-buttondown-form">
+      <label for="bd-email">Seu e-mail</label>
+      <input type="email" name="email" id="bd-email" required />
+      <input type="submit" value="Receber livro grátis" />
     </form>
   </div>
 
-  <section class="livros" aria-label="Capas dos livros">
+  <section class="livros">
     <h2>Outros Livros</h2>
     <div class="galeria-livros">
-      <img src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Capa: Estação das Flores" class="capa-livro" />
-      <img src="https://eniobritopoeta.github.io/meus-ebooks/formacao-politica.png" alt="Capa: Formação Política" class="capa-livro" />
-      <img src="https://eniobritopoeta.github.io/meus-ebooks/meninos-do-futuro.png" alt="Capa: Meninos do Futuro" class="capa-livro" />
+      <!-- Adicione mais capas aqui quando tiver -->
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Enio Brito de Sá — Todos os direitos reservados.
+    © 2025 Enio Brito. Todos os direitos reservados.
   </footer>
 
 </body>
