@@ -5,243 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Estação das Flores – Poemas para Despertar</title>
   <meta name="description" content="Baixe os livros de Enio Brito: Estação das Flores, Meninos do Futuro e Formação Política. Pacote por R$74,00 via Pix.">
-
+  
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSR2SC9PMR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-QSR2SC9PMR');
   </script>
 
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: linear-gradient(135deg, #fce4ec, #f3e5f5);
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      line-height: 1.6;
-    }
-    header {
-      max-width: 480px;
-      margin-bottom: 2rem;
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #b23a48;
-      color: white;
-      border-radius: 12px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-    header p.subtitle {
-      font-size: 1.25rem;
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      color: #ffebee;
-    }
-    img.capa {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(178, 58, 72, 0.4);
-      margin-bottom: 1.8rem;
-      cursor: pointer;
-    }
-    .apresentacao {
-      max-width: 420px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      color: #4a3c47;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 1rem 1.4rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .botoes-contato {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      background-color: #b23a48;
-      color: white;
-      padding: 1em 2.2em;
-      border-radius: 40px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .btn:hover {
-      background-color: #8c2a37;
-      transform: scale(1.05);
-    }
-    .conteudo {
-      max-width: 720px;
-      margin: 2rem auto;
-      text-align: center;
-    }
-    .msg-valor {
-      font-size: 1.1rem;
-      color: #b23a48;
-      font-weight: 600;
-      margin: 1.5rem auto;
-      max-width: 500px;
-    }
-    .btn-download {
-      background-color: #2e7d32;
-      padding: 1em 2.5em;
-      font-size: 1.1rem;
-      box-shadow: 0 5px 15px rgba(46, 125, 50, 0.7);
-    }
-    .btn-download:hover {
-      background-color: #1b5e20;
-    }
-    .btn-pacote {
-      background-color: #1976d2;
-      box-shadow: 0 5px 15px rgba(25, 118, 210, 0.7);
-    }
-    .btn-pacote:hover {
-      background-color: #0d47a1;
-    }
-    form {
-      max-width: 420px;
-      width: 100%;
-      margin: 2rem auto;
-      padding: 1.8rem 2.2rem;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(178, 58, 72, 0.2);
-    }
-    form label {
-      display: block;
-      font-weight: 600;
-      color: #6a4a58;
-      margin-bottom: 0.5rem;
-      text-align: left;
-    }
-    form input[type="email"] {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      border: 2px solid #b23a48;
-      border-radius: 40px;
-      outline: none;
-    }
-    form input[type="email"]:focus {
-      border-color: #8c2a37;
-    }
-    form input[type="submit"] {
-      width: 100%;
-      padding: 0.9rem;
-      background-color: #b23a48;
-      color: white;
-      border: none;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: pointer;
-      margin-top: 1rem;
-      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
-      transition: background-color 0.3s ease;
-    }
-    form input[type="submit"]:hover {
-      background-color: #8c2a37;
-    }
-    section.livros {
-      max-width: 800px;
-      margin: 3rem auto;
-      text-align: center;
-    }
-    section.livros h2 {
-      font-size: 2rem;
-      color: #b23a48;
-      margin-bottom: 1.5rem;
-    }
-    .galeria-livros {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .galeria-livros img.capa-livro {
-      width: 160px;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(178, 58, 72, 0.4);
-      transition: transform 0.3s ease;
-    }
-    .galeria-livros img.capa-livro:hover {
-      transform: scale(1.1) rotateZ(1deg);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      background-color: #fce4e4;
-      color: #333;
-      font-size: 0.9rem;
-      width: 100%;
-    }
-    @media (max-width: 480px) {
-      .botoes-contato {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .btn {
-        width: 100%;
-      }
-      img.capa {
-        width: 280px;
-      }
-      .galeria-livros img.capa-livro {
-        width: 120px;
-      }
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    body {background: linear-gradient(135deg, #fce4ec, #f3e5f5); color: #333; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; line-height: 1.6;}
+    header {max-width: 480px; margin-bottom: 2rem; text-align: center; padding: 2rem 1rem; background-color: #b23a48; color: white; border-radius: 12px;}
+    header h1 {font-size: 2.5rem; margin-bottom: 0.3rem;}
+    header p.subtitle {font-size: 1.25rem; font-style: italic; margin-bottom: 1.5rem; color: #ffebee;}
+    img.capa {width: 100%; max-width: 320px; border-radius: 16px; box-shadow: 0 8px 20px rgba(178, 58, 72, 0.4); margin-bottom: 1.8rem; cursor: pointer;}
+    .apresentacao {max-width: 420px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.5; color: #4a3c47; background: rgba(255,255,255,0.85); padding: 1rem 1.4rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);}
+    .botoes-contato {display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 2.5rem; flex-wrap: wrap;}
+    .btn {background-color: #b23a48; color: white; padding: 1em 2.2em; border-radius: 40px; font-weight: 700; text-decoration: none; box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7); transition: background-color 0.3s ease, transform 0.2s ease;}
+    .btn:hover {background-color: #8c2a37; transform: scale(1.05);}
+    .conteudo {max-width: 720px; margin: 2rem auto; text-align: center;}
+    .msg-valor {font-size: 1.1rem; color: #b23a48; font-weight: 600; margin: 1.5rem auto; max-width: 500px;}
+    .btn-download {background-color: #2e7d32; padding: 1em 2.5em; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(46, 125, 50, 0.7);}
+    .btn-download:hover {background-color: #1b5e20;}
+    .btn-pacote {background-color: #1976d2; box-shadow: 0 5px 15px rgba(25, 118, 210, 0.7);}
+    .btn-pacote:hover {background-color: #0d47a1;}
+    form {max-width: 420px; width: 100%; margin: 2rem auto; padding: 1.8rem 2.2rem; background: white; border-radius: 18px; box-shadow: 0 10px 25px rgba(178, 58, 72, 0.2);}
+    form label {display: block; font-weight: 600; color: #6a4a58; margin-bottom: 0.5rem; text-align: left;}
+    form input[type="email"] {width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #b23a48; border-radius: 40px; outline: none;}
+    form input[type="email"]:focus {border-color: #8c2a37;}
+    form input[type="submit"] {width: 100%; padding: 0.9rem; background-color: #b23a48; color: white; border: none; border-radius: 40px; font-weight: 700; font-size: 1.2rem; cursor: pointer; margin-top: 1rem; box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7); transition: background-color 0.3s ease;}
+    form input[type="submit"]:hover {background-color: #8c2a37;}
+    section.livros {max-width: 800px; margin: 3rem auto; text-align: center;}
+    section.livros h2 {font-size: 2rem; color: #b23a48; margin-bottom: 1.5rem;}
+    .galeria-livros {display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;}
+    .galeria-livros img.capa-livro {width: 160px; border-radius: 14px; box-shadow: 0 6px 18px rgba(178, 58, 72, 0.4); transition: transform 0.3s ease;}
+    .galeria-livros img.capa-livro:hover {transform: scale(1.1) rotateZ(1deg);}
+    footer {text-align: center; padding: 2rem 1rem; margin-top: 3rem; background-color: #fce4e4; color: #333; font-size: 0.9rem; width: 100%;}
+    @media (max-width: 480px) {.botoes-contato {flex-direction: column; gap: 1rem;}.btn {width: 100%;} img.capa {width: 280px;} .galeria-livros img.capa-livro {width: 120px;}}
   </style>
 </head>
 <body>
   <header>
     <h1>📚 Estação das Flores</h1>
     <p class="subtitle">Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
-    <img
-      class="capa"
-      src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg"
-      alt="Capa do Livro Estação das Flores"
-      title="Capa do Livro Estação das Flores"
-      loading="lazy"
-    />
-    <p class="apresentacao">
-      Um convite à beleza, à liberdade e à transformação interior.<br>
-      Leia, compartilhe e viva a poesia que desperta a alma.
-    </p>
+    <img class="capa" src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Capa do Livro Estação das Flores" title="Capa do Livro Estação das Flores" loading="lazy"/>
+    <p class="apresentacao">Um convite à beleza, à liberdade e à transformação interior.<br>Leia, compartilhe e viva a poesia que desperta a alma.</p>
     <div class="botoes-contato">
       <a href="https://mail.google.com/mail/?view=cm&to=enio.brito@gmail.com" target="_blank" class="btn">📩 Fale comigo por e-mail</a>
       <a href="https://wa.me/5562982405324" class="btn" target="_blank" rel="noopener">💬 Fale comigo no WhatsApp</a>
-      <a href="https://poe.com/Agente-EnioBrito2026" target="_blank" class="btn" style="background-color: #4527a0;">
-        🤖 Fale com o Agente de IA
-      </a>
+      <a href="https://poe.com/Agente-EnioBrito2026" target="_blank" class="btn" style="background-color: #4527a0;">🤖 Fale com o Agente de IA</a>
     </div>
   </header>
 
   <div class="conteudo">
-    <p>
-      <strong>“Estação das Flores”</strong> é um mergulho na poesia que transforma.
-      Ideal para quem busca sensibilidade, espiritualidade e consciência política.
-    </p>
+    <h2 style="color:#2e7d32; margin-bottom:1rem;">🎁 Ganhe gratuitamente: Três Poemas para Nossa Conexão</h2>
+    <p style="max-width:500px; margin:0 auto 1.5rem;">Cadastre seu e-mail abaixo e receba imediatamente o PDF com os três poemas que vão tocar sua alma.</p>
+    
+    <!-- Formulário de inscrição -->
+    <form action="https://buttondown.com/api/emails/embed-subscribe/enio" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/enio', 'popupwindow')">
+      <label for="bd-email">Seu e-mail</label>
+      <input type="email" name="email" id="bd-email" required />
+      <input type="submit" value="📥 Receber PDF Grátis" onclick="gtag('event', 'click', { 'event_category': 'Isca Digital', 'event_label': 'PDF Tres Poemas' });"/>
+    </form>
 
-    <p class="msg-valor">
-      Um livro feito com alma. R$34,00 é
+    <h2 style="margin:2.5rem 0 1rem; color:#b23a48;">📚 Compre os livros</h2>
+    <p class="msg-valor">Um livro feito com alma. R$34,00 é um valor justo para uma obra que transforma.</p>
+    <a href="#instrucoes" class="btn btn-download" onclick="gtag('event', 'click', { 'event_category': 'Venda', 'event_label': 'Estacao das Flores' });">📥 Comprar este livro (R$34,00)</a>
+    
+    <h2 style="color:#1976d2; margin:2.5rem 0 1rem;">🔥 Pacote especial: os 3 livros por R$74,00</h2>
+    <p style="max-width: 500px; margin:0 auto 1.5rem;">Leve Estação das Flores, Meninos do Futuro e Formação Política com desconto. Economize R$30 e leve a trilogia completa.</p>
+    <a href="#pacote" class="btn btn-pacote" onclick="gtag('event', 'click', { 'event_category': 'Venda', 'event_label': 'Pacote 3 Livros' });">📦 Comprar os 3 livros (R$74,00)</a>
+  </div>
+
+  <!-- Seção de instruções de compra -->
+  <section id="instrucoes" style="max-width:700px; margin:3rem auto; padding:2rem; background:white; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
+    <h2 style="color:#b23a48; margin-bottom:1rem;">📚 Como baixar “Estação das Flores”</h2>
+    <ol style="text-align:left; margin:1.5rem 0; line-height:1.8;">
+      <li>Faça uma contribuição de <strong>R$34,00 via Pix</strong> para o número:</li>
+      <p style="font-weight:bold; color:#d32f2f;">62 98240-5324</p>
+      <li>Envie o <strong>comprovante</strong> pelo WhatsApp para o mesmo número.</li>
+      <li>Em até 24h, você receberá o <strong>link para baixar o livro em PDF</strong>.</li>
+    </ol>
+    <a href="https://wa.me/5562982405324" class="btn" style="margin-top:1rem;" target="_blank">📤 Enviar comprovante agora</a>
+  </section>
+
+  <!-- Seção de pacote -->
+  <section id="pacote" style="max-width:700px; margin:3rem auto; padding:2rem; background:white; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
+    <h2 style="color:#1976d2; margin-bottom:1rem;">📦 Pacote: Os 3 Livros por R$74,00</h2>
+    <ul style="text-align:left; margin-left:1.5rem; margin-bottom:1.5rem; line-height:1.8;">
+      <li>📘 Estação das Flores</li>
+      <li>📗 Meninos do Futuro</li>
+      <li>📕 Formação Política para o Rompimento Coletivo</li>
+    </ul>
+    <p style="text-align:left;"><strong>Pague R$74,00 via Pix</strong> para:<br><span style="font-weight:bold; color:#d32f2f;">62 98240-5324</span></p>
+    <p style="font-size:0.95rem; color:#666; margin:1.5rem 0;">Envie o comprovante pelo WhatsApp e receba os links dos 3 livros em até 24h.</p>
+    <a href="https://wa.me/5562982405324" class="btn" style="margin-top:1rem;" target="_blank">📤 Enviar comprovante agora</a>
+  </section>
+
+  <footer>
+    © 2025 Enio Brito. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
+
