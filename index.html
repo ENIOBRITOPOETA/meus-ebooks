@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -46,7 +45,12 @@
     .galeria-livros img.capa-livro:hover {transform:scale(1.1) rotateZ(1deg);}
     footer {text-align:center; padding:2rem 1rem; margin-top:3rem; background-color:#fce4e4; color:#333; font-size:0.9rem; width:100%;}
     footer a {color:#1976d2; text-decoration:underline;}
-    @media(max-width:480px){.botoes-contato{flex-direction:column; gap:1rem;}.btn{width:100%;} img.capa{width:280px;} .galeria-livros img.capa-livro{width:120px;}}
+    @media(max-width:480px){
+      .botoes-contato{flex-direction:column; gap:1rem;}
+      .btn{width:100%;}
+      img.capa{width:280px;}
+      .galeria-livros img.capa-livro{width:120px;}
+    }
   </style>
 </head>
 <body>
@@ -65,6 +69,7 @@
   <div class="conteudo">
     <h2 style="color:#2e7d32; margin-bottom:1rem;">🎁 Ganhe gratuitamente: Três Poemas para Nossa Conexão</h2>
     <p style="max-width:500px; margin:0 auto 1.5rem;">Cadastre seu e-mail abaixo e receba imediatamente o PDF com os três poemas que vão tocar sua alma.</p>
+    
     <!-- Formulário de inscrição -->
     <form action="https://buttondown.com/api/emails/embed-subscribe/enio" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/enio','popupwindow')">
       <label for="bd-email">Seu e-mail</label>
@@ -81,7 +86,7 @@
     <a href="#pacote" class="btn btn-pacote" onclick="gtag('event','click',{'event_category':'Venda','event_label':'Pacote 3 Livros'});">📦 Comprar os 3 livros (R$74,00)</a>
   </div>
 
-  <!-- Galeria de livros individuais -->
+  <!-- Galeria de livros -->
   <section class="livros">
     <h2>📖 Nossos Livros</h2>
     <div class="galeria-livros">
@@ -91,7 +96,7 @@
     </div>
   </section>
 
-  <!-- Seção de instruções de compra -->
+  <!-- Instruções de compra -->
   <section id="instrucoes" style="max-width:700px; margin:3rem auto; padding:2rem; background:white; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
     <h2 style="color:#b23a48; margin-bottom:1rem;">📚 Como baixar “Estação das Flores”</h2>
     <ol style="text-align:left; margin:1.5rem 0; line-height:1.8;">
@@ -103,7 +108,7 @@
     <a href="https://wa.me/5562982405324" class="btn" style="margin-top:1rem;" target="_blank">📤 Enviar comprovante agora</a>
   </section>
 
-  <!-- Seção de pacote -->
+  <!-- Pacote -->
   <section id="pacote" style="max-width:700px; margin:3rem auto; padding:2rem; background:white; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
     <h2 style="color:#1976d2; margin-bottom:1rem;">📦 Pacote: Os 3 Livros por R$74,00</h2>
     <ul style="text-align:left; margin-left:1.5rem; margin-bottom:1.5rem; line-height:1.8;">
@@ -121,4 +126,3 @@
   </footer>
 </body>
 </html>
-
