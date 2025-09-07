@@ -140,6 +140,40 @@
 
   <footer>
     © 2025 Enio Brito. Todos os direitos reservados. | <a href="https://eniobritopoeta.github.io/meus-ebooks-en/">Versão em Inglês</a>
-  </footer>
+  </footer><script>
+    // CONFIGURAÇÃO DO WEBHOOK N8N
+    const WEBHOOK_URL = 'https://eniobrito2026.app.n8n.cloud/webhook-test/landing-books'; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = {
+                email: formData.get("email"),
+                tipo_acao: "lead_captura",
+                origem: "landing_page",
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                await fetch(WEBHOOK_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                alert("✅ Obrigado! Seu cadastro foi enviado com sucesso.");
+                form.reset();
+
+            } catch (error) {
+                alert("❌ Erro ao enviar, tente novamente.");
+                console.error(error);
+            }
+        });
+    });
+</script>
 </body>
 </html>
