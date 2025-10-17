@@ -2,25 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <title>Estação das Flores – Poemas para Despertar a Revolução do Amor | Enio Brito</title>
-  <meta name="description" content="Baixe gratuitamente os livros de Enio Brito: Estação das Flores, Meninos do Futuro e Formação Política. Poesia, consciência e transformação. Parte do Movimento de Resgate da Identidade Cultural (SMRIC).">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estação das Flores – Poemas para Despertar</title>
+  <meta name="description" content="Baixe gratuitamente os livros de Enio Brito: Estação das Flores, Meninos do Futuro e Formação Política. Poesia, consciência e transformação.">
   <meta name="author" content="Enio Brito" />
-  <meta name="keywords" content="poesia, livros gratuitos, poesia brasileira, revolução do amor, formação política, educação popular, SMRIC, movimento cultural, enio brito">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://seusite.com.br" />
-  <meta property="og:title" content="Estação das Flores – Poemas para Despertar a Revolução do Amor" />
-  <meta property="og:description" content="Baixe gratuitamente os livros de Enio Brito. Poesia, consciência e transformação. Parte do Movimento de Resgate da Identidade Cultural." />
+  <meta property="og:title" content="Estação das Flores – Poemas para Despertar" />
+  <meta property="og:description" content="Baixe gratuitamente os livros de Enio Brito: Estação das Flores, Meninos do Futuro e Formação Política. Poesia, consciência e transformação." />
   <meta property="og:image" content="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" />
+  <meta property="og:url" content="https://eniobritopoeta.github.io/meus-ebooks/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://seusite.com.br" />
-  <meta name="twitter:title" content="Estação das Flores – Poemas para Despertar a Revolução do Amor" />
-  <meta name="twitter:description" content="Baixe gratuitamente os livros de Enio Brito. Poesia, consciência e transformação." />
+  <meta name="twitter:title" content="Estação das Flores – Poemas para Despertar" />
+  <meta name="twitter:description" content="Poesia, consciência e transformação. Baixe grátis os livros de Enio Brito." />
   <meta name="twitter:image" content="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" />
 
   <!-- Google Analytics -->
@@ -30,102 +27,69 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-QSR2SC9PMR');
-    // Evento de clique no botão de download
-    document.addEventListener('DOMContentLoaded', () => {
-      const btnDownload = document.querySelector('.btn-download');
-      if (btnDownload) {
-        btnDownload.addEventListener('click', () => {
-          gtag('event', 'click', {
-            'event_category': 'Lead Capture',
-            'event_label': 'Download eBooks'
-          });
-        });
-      }
-    });
   </script>
 
   <style>
-    :root {
-      --primary: #b23a48;
-      --secondary: #1976d2;
-      --accent: #2e7d32;
-      --light: #fce4ec;
-      --dark: #333;
-      --white: #fff;
-      --shadow: rgba(178,58,72,0.4);
-      --text-light: #ffebee;
-      --bg-gradient: linear-gradient(135deg, var(--light), #f3e5f5);
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
-      background: var(--bg-gradient);
-      color: var(--dark);
+      background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+      color: #333;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem 1rem;
       line-height: 1.6;
-      transition: background 0.3s ease;
     }
-
     header {
       max-width: 480px;
       margin-bottom: 2rem;
       text-align: center;
       padding: 2rem 1rem;
-      background-color: var(--primary);
-      color: var(--white);
+      background-color: #b23a48;
+      color: white;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
-
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.3rem;
-      letter-spacing: -0.5px;
     }
-
     header p.subtitle {
       font-size: 1.25rem;
       font-style: italic;
       margin-bottom: 1.5rem;
-      color: var(--text-light);
+      color: #ffebee;
     }
-
+    .capa-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+    }
     img.capa {
       width: 100%;
       max-width: 320px;
+      height: auto;
       border-radius: 16px;
-      box-shadow: 0 8px 20px var(--shadow);
-      margin-bottom: 1.8rem;
-      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(178, 58, 72, 0.4);
       transition: transform 0.3s ease;
     }
-
-    img.capa:hover {
-      transform: scale(1.02);
+    .capa-link:hover img.capa {
+      transform: scale(1.05);
     }
-
     .apresentacao {
       max-width: 420px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
       color: #4a3c47;
-      background: rgba(255,255,255,0.95);
-      padding: 1.2rem 1.4rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem 1.4rem;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      line-height: 1.7;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-
     .botoes-contato {
       display: flex;
       justify-content: center;
@@ -133,56 +97,43 @@
       flex-wrap: wrap;
       margin-bottom: 2.5rem;
     }
-
     .btn {
-      background-color: var(--primary);
-      color: var(--white);
+      background-color: #b23a48;
+      color: white;
       padding: 1em 2em;
       border-radius: 40px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(178,58,72,0.7);
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      min-width: 120px;
-      text-align: center;
+      box-shadow: 0 5px 15px rgba(178, 58, 72, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
     }
-
     .btn:hover {
       background-color: #8c2a37;
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(178,58,72,0.8);
     }
-
     .btn:focus {
-      outline: 3px solid #fff;
+      outline: 3px solid #ffd1d7;
       outline-offset: 2px;
     }
-
     .conteudo {
       max-width: 720px;
       margin: 2rem auto;
       text-align: center;
     }
-
     .msg-valor {
       font-size: 1.1rem;
-      color: var(--primary);
+      color: #b23a48;
       font-weight: 600;
       margin: 1.5rem auto;
       max-width: 500px;
     }
-
     .btn-download {
-      background-color: var(--accent);
+      background-color: #2e7d32;
     }
-
     .btn-pacote {
-      background-color: var(--secondary);
+      background-color: #1976d2;
     }
-
     .galeria-livros {
       display: flex;
       justify-content: center;
@@ -190,100 +141,60 @@
       flex-wrap: wrap;
       margin: 2rem 0;
     }
-
     .galeria-livros img {
       width: 160px;
+      height: auto;
       border-radius: 14px;
-      box-shadow: 0 6px 18px var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 18px rgba(178, 58, 72, 0.4);
+      transition: transform 0.3s ease;
     }
-
     .galeria-livros img:hover {
       transform: scale(1.1) rotateZ(1deg);
-      box-shadow: 0 10px 25px rgba(178,58,72,0.6);
     }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 3rem;
       background-color: #fce4e4;
-      color: var(--dark);
+      color: #333;
       font-size: 0.9rem;
       width: 100%;
-      border-top: 1px solid rgba(0,0,0,0.05);
     }
-
     footer a {
-      color: var(--secondary);
+      color: #1976d2;
       text-decoration: underline;
-      transition: color 0.2s ease;
     }
 
-    footer a:hover {
-      color: #1565c0;
-    }
-
-    /* Lead Section */
+    /* Estilos para o bloco de lead capture */
     .lead-section {
       max-width: 600px;
       margin: 40px auto;
-      padding: 25px;
-      background: var(--white);
+      padding: 20px;
+      background: #fff;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       text-align: center;
-      animation: fadeInUp 0.6s ease-out;
     }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .lead-section h2 {
       color: #e63946;
       margin-bottom: 10px;
-      font-size: 1.5rem;
     }
-
     .lead-section p {
       font-size: 16px;
       margin-bottom: 20px;
-      color: var(--dark);
+      color: #333;
     }
-
-    .lead-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
     .lead-form input {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       margin-bottom: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 16px;
-      transition: border 0.2s ease;
     }
-
-    .lead-form input:focus {
-      border-color: var(--primary);
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(178,58,72,0.2);
-    }
-
     .lead-form button {
       background: #e63946;
-      color: var(--white);
+      color: #fff;
       border: none;
       padding: 12px 20px;
       border-radius: 8px;
@@ -291,86 +202,25 @@
       width: 100%;
       font-size: 16px;
       font-weight: bold;
-      transition: all 0.2s ease;
+      transition: background-color 0.3s ease;
     }
-
     .lead-form button:hover {
-      background: #d32f2f;
-      transform: translateY(-1px);
+      background: #c62f3a;
     }
-
-    .lead-form button:active {
-      transform: translateY(0);
+    .lead-form button:focus {
+      outline: 3px solid #ffd1d7;
+      outline-offset: 2px;
     }
-
     .lead-section .footer-link {
       margin-top: 20px;
       font-size: 14px;
       color: #777;
     }
-
     .lead-section .footer-link a {
       color: #e63946;
       text-decoration: none;
-      font-weight: 600;
     }
 
-    .lead-section .footer-link a:hover {
-      text-decoration: underline;
-    }
-
-    /* Pacote Section */
-    #pacote {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      animation: fadeInUp 0.6s ease-out;
-    }
-
-    #pacote h2 {
-      color: var(--secondary);
-      margin-bottom: 1rem;
-      font-size: 1.6rem;
-    }
-
-    #pacote ul {
-      text-align: left;
-      margin: 1.5rem;
-      line-height: 1.8;
-      padding-left: 1.5rem;
-    }
-
-    #pacote li {
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-left: 1.2rem;
-    }
-
-    #pacote li:before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--secondary);
-      font-weight: bold;
-    }
-
-    #pacote p {
-      margin: 1rem 0;
-      font-size: 1rem;
-    }
-
-    #pacote span.pix {
-      font-weight: bold;
-      color: #d32f2f;
-      font-size: 1.1rem;
-      display: block;
-      margin-top: 0.5rem;
-    }
-
-    /* Responsividade */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -378,40 +228,11 @@
       .apresentacao {
         font-size: 1rem;
       }
-      .btn {
-        padding: 0.8em 1.5em;
-        font-size: 0.95rem;
-      }
-      .lead-section {
-        padding: 20px 15px;
-      }
       .galeria-livros img {
         width: 140px;
       }
-    }
-
-    /* Acessibilidade - Foco visível */
-    :focus-visible {
-      outline: 3px solid #1976d2;
-      outline-offset: 2px;
-    }
-
-    /* Modo escuro (opcional) */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: linear-gradient(135deg, #2e1a26, #3a2a3a);
-        color: #eee;
-      }
-      header {
-        background-color: #5d2530;
-      }
-      .apresentacao {
-        background: rgba(30,30,30,0.8);
-        color: #eee;
-      }
-      footer {
-        background-color: #2a1c25;
-        color: #ddd;
+      .galeria-livros {
+        gap: 1rem;
       }
     }
   </style>
@@ -421,7 +242,9 @@
   <header>
     <h1>📚 Estação das Flores</h1>
     <p class="subtitle">Poemas para Despertar a Revolução do Amor – Por Enio Brito</p>
-    <img class="capa" src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Capa do Livro Estação das Flores – Poemas para Despertar a Revolução do Amor"/>
+    <a href="https://eniobritopoeta.github.io/meus-ebooks/tres-poemas.pdf" target="_blank" class="capa-link" aria-label="Abrir amostra de poemas em nova aba">
+      <img class="capa" src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Capa do Livro Estação das Flores" width="320" height="480"/>
+    </a>
     <p class="apresentacao">Um convite à beleza, à liberdade e à transformação interior.<br>Leia, compartilhe e viva a poesia que desperta a alma.</p>
     <div class="botoes-contato">
       <a href="mailto:enio.brito@gmail.com" class="btn" aria-label="Enviar e-mail para Enio Brito">📩 E-mail</a>
@@ -434,24 +257,23 @@
     <h2>Baixe Meus eBooks Gratuitos</h2>
     <p>Receba no seu e-mail meus eBooks mais inspiradores e participe do movimento pela revolução do amor.</p>
     
-    <form id="leadForm" action="https://formspree.io/f/xpwlozpz" method="POST">
-      <input type="hidden" name="_replyto" value="Seu e-mail será respondido automaticamente pelo Formspree" />
-      <input type="text" name="nome" placeholder="Seu nome completo" required aria-required="true" />
-      <input type="email" name="email" placeholder="Seu melhor e-mail" required aria-required="true" />
-      <button type="submit" id="submitBtn">Quero Receber Agora</button>
+    <form id="leadForm" class="lead-form">
+      <input type="text" name="nome" placeholder="Seu nome" required aria-label="Digite seu nome" />
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required aria-label="Digite seu e-mail" />
+      <button type="submit">Quero Receber Agora</button>
     </form>
 
     <p class="footer-link">
       🌿 Parte do <strong>Movimento de Resgate da Identidade Cultural</strong> — 
-      <a href="https://sites.google.com/view/smric/in%C3%ADcio" target="_blank" rel="noopener noreferrer">visite o site oficial</a>
+      <a href="https://sites.google.com/view/smric/in%C3%ADcio" target="_blank">visite o site oficial</a>
     </p>
   </section>
 
   <!-- GALERIA DE LIVROS -->
   <section class="galeria-livros">
-    <img src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Capa do livro Estação das Flores – Poemas para Despertar a Revolução do Amor"/>
-    <img src="https://eniobritopoeta.github.io/meus-ebooks/meninos-do-futuro.png" alt="Capa do livro Meninos do Futuro – Educação popular e transformação social"/>
-    <img src="https://eniobritopoeta.github.io/meus-ebooks/formacao-politica.png" alt="Capa do livro Formação Política – Para o rompimento coletivo"/>
+    <img src="https://eniobritopoeta.github.io/meus-ebooks/estacao-das-flores.jpeg" alt="Capa do livro Estação das Flores - Poemas para Despertar a Revolução do Amor" width="160" height="240" loading="lazy"/>
+    <img src="https://eniobritopoeta.github.io/meus-ebooks/meninos-do-futuro.png" alt="Capa do livro Meninos do Futuro - Educação popular e transformação social" width="160" height="240" loading="lazy"/>
+    <img src="https://eniobritopoeta.github.io/meus-ebooks/formacao-politica.png" alt="Capa do livro Formação Política - Para o rompimento coletivo" width="160" height="240" loading="lazy"/>
   </section>
 
   <!-- SEÇÃO DE COMPRA -->
@@ -463,20 +285,20 @@
     <a href="#pacote" class="btn btn-pacote">📦 Comprar Agora</a>
   </div>
 
-  <section id="pacote">
-    <h2>📦 Pacote Trilogia da Consciência</h2>
-    <ul>
+  <section id="pacote" style="max-width:800px; margin:3rem auto; padding:2rem; background:white; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.1);">
+    <h2 style="color:#1976d2; margin-bottom:1rem;">📦 Pacote Trilogia da Consciência</h2>
+    <ul style="text-align:left; margin:1.5rem; line-height:1.8;">
       <li>📘 <strong>Estação das Flores</strong>: Poemas para despertar a revolução do amor</li>
       <li>📗 <strong>Meninos do Futuro</strong>: Educação popular e transformação social</li>
       <li>📕 <strong>Formação Política</strong>: Para o rompimento coletivo</li>
     </ul>
-    <p><strong>Pague R$74,00 via Pix:</strong><br><span class="pix">62 98240-5324</span></p>
-    <a href="https://wa.me/5562982405324" class="btn" target="_blank" rel="noopener noreferrer">📤 Enviar Comprovante</a>
+    <p><strong>Pague R$74,00 via Pix</strong><br>Chave Pix (telefone): <span style="font-weight:bold; color:#d32f2f;">+55 62 98240-5324</span></p>
+    <a href="https://wa.me/5562982405324?text=Olá!%20Gostaria%20de%20enviar%20o%20comprovante%20do%20Pacote%20Trilogia%20da%20Consciência." class="btn" target="_blank" aria-label="Enviar comprovante de pagamento via WhatsApp">📤 Enviar Comprovante</a>
   </section>
 
   <footer>
     © 2025 Enio Brito – Todos os direitos reservados. |
-    <a href="https://sites.google.com/view/smric/in%C3%ADcio" target="_blank" rel="noopener noreferrer">Movimento de Resgate da Identidade Cultural</a>
+    <a href="https://sites.google.com/view/smric/in%C3%ADcio" target="_blank">Movimento de Resgate da Identidade Cultural</a>
   </footer>
 
   <!-- SCRIPT DE ENVIO PARA FORMSPREE -->
@@ -484,11 +306,8 @@
     document.getElementById('leadForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      const submitBtn = document.getElementById('submitBtn');
       const emailInput = this.querySelector('input[name="email"]');
       const email = emailInput.value.trim();
-      const nomeInput = this.querySelector('input[name="nome"]');
-      const nome = nomeInput.value.trim();
 
       // Validação básica de e-mail
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -498,63 +317,35 @@
         return;
       }
 
-      if (nome.length < 2) {
-        alert("⚠️ Por favor, insira seu nome completo.");
-        nomeInput.focus();
-        return;
-      }
-
-      // Desabilita botão durante envio
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Enviando...";
-
       const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
 
       try {
         const response = await fetch('https://formspree.io/f/xpwlozpz', {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
+          body: formData
         });
 
         if (response.ok) {
           alert("✅ Obrigado! Seu cadastro foi enviado com sucesso. Seu download está abrindo agora...");
           this.reset();
-          window.open("https://eniobritopoeta.github.io/meus-ebooks/tres-poemas.pdf", "_blank");
           
-          // GA Event
-          gtag('event', 'conversion', {
-            'send_to': 'G-QSR2SC9PMR',
-            'value': 1.0,
-            'currency': 'BRL'
-          });
+          // Evento do Google Analytics
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { 
+              form_id: 'leadForm', 
+              method: 'Formspree' 
+            });
+          }
+          
+          // Redireciona para o PDF (mais confiável que window.open)
+          window.location.href = "https://eniobritopoeta.github.io/meus-ebooks/tres-poemas.pdf";
         } else {
           alert("⚠️ Erro ao enviar. Tente novamente em instantes.");
         }
       } catch (err) {
         alert("❌ Falha de conexão. Por favor, tente novamente.");
         console.error(err);
-      } finally {
-        // Reabilita botão
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Quero Receber Agora";
       }
-    });
-
-    // Scroll suave para seção de pacote
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
     });
   </script>
 
